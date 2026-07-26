@@ -4,6 +4,11 @@
 
 **RobinCracker** is a professional open-source web application for password security analysis, hash identification, and cracking workflow automation. Built for penetration testers, security researchers, and CTF players.
 
+[![Live Demo](https://img.shields.io/badge/LIVE-Demo-00C853?style=for-the-badge&logo=vercel)](https://robin-cracker.vercel.app)
+[![API Docs](https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge&logo=render)](https://robincracker-api.onrender.com/docs)
+
+---
+
 ![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=next.js)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.140-009688?logo=fastapi)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8?logo=tailwindcss)
