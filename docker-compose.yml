@@ -1,14 +1,14 @@
-version: '3.8'
 services:
   backend:
     build: ./backend
     ports:
       - "8000:8000"
     volumes:
-      - ./backend/data:/app/data
-      - ./backend/uploads:/app/uploads
+      - backend_data:/app/data
+      - backend_uploads:/app/uploads
     environment:
       - CORS_ORIGINS=*
+
   frontend:
     build: ./frontend
     ports:
@@ -17,3 +17,7 @@ services:
       - backend
     environment:
       - NEXT_PUBLIC_API_URL=http://localhost:8000
+
+volumes:
+  backend_data:
+  backend_uploads:
