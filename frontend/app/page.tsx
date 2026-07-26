@@ -28,6 +28,9 @@ export default function LandingPage() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       <MatrixRain />
+      {/* Blue glow overlay */}
+      <div className="absolute inset-0 z-[1] bg-blue-soft pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-glow pointer-events-none" />
       
       {/* Nav bar */}
       <nav className="relative z-10 flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
@@ -48,19 +51,19 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyber-green/10 border border-cyber-green/30 text-cyber-green font-mono text-xs mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/10 via-cyan-400/10 to-cyan-500/10 border border-cyan-400/30 text-cyan-300 font-mono text-xs mb-6 shadow-lg shadow-cyan-500/5">
             <Star className="w-3 h-3" /> Open Source · Cybersecurity Toolkit
           </div>
-          <h1 className="text-5xl md:text-7xl font-mono font-bold mb-6 leading-tight">
-            Robin<span className="text-cyber-green">Cracker</span>
+          <h1 className="text-5xl md:text-7xl font-mono font-bold mb-6 leading-tight text-glow-white">
+            Robin<span className="text-cyber-green text-glow-green">Cracker</span>
           </h1>
-          <p className="text-xl text-cyber-muted max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-cyber-muted/90 max-w-2xl mx-auto mb-8 drop-shadow-[0_0_10px_rgba(59,130,246,0.05)]">
             Professional Password Hash Analysis Toolkit — identify, analyze, and generate cracking commands with enterprise-grade UI.
           </p>
 
           {/* Terminal */}
           <div className="max-w-xl mx-auto mb-10">
-            <div className="terminal-window">
+            <div className="terminal-window shadow-lg shadow-blue-500/5 border-blue-500/20">
               <div className="terminal-header">
                 <div className="terminal-dot bg-red-500" />
                 <div className="terminal-dot bg-yellow-500" />
@@ -79,7 +82,7 @@ export default function LandingPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="cyber-button text-base px-10 py-4"
+              className="cyber-button text-base px-10 py-4 shadow-lg shadow-cyber-green/10"
             >
               Enter Dashboard
               <ChevronRight className="w-5 h-5" />
@@ -91,7 +94,7 @@ export default function LandingPage() {
       {/* Features */}
       <section className="relative z-10 max-w-6xl mx-auto px-6 pb-20">
         <div className="text-center mb-12">
-          <h2 className="font-mono font-bold text-2xl mb-2">16 Professional Modules</h2>
+          <h2 className="font-mono font-bold text-2xl mb-2 text-glow-cyan">16 Professional Modules</h2>
           <p className="text-cyber-muted">Everything you need for hash analysis and password security auditing</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -117,7 +120,7 @@ export default function LandingPage() {
 
       {/* Stats */}
       <section className="relative z-10 max-w-4xl mx-auto px-6 pb-20">
-        <div className="glass rounded-2xl p-8 border border-cyber-cyan/20">
+        <div className="glass rounded-2xl p-8 border border-cyber-cyan/20 shadow-lg shadow-blue-500/5">
           <div className="grid grid-cols-3 gap-8 text-center">
             <div>
               <div className="font-mono text-3xl font-bold text-cyber-green">16</div>
