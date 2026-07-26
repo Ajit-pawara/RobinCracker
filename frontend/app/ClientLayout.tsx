@@ -5,6 +5,7 @@ import Sidebar from '@/components/layout/Sidebar'
 import TopBar from '@/components/layout/TopBar'
 import CommandPalette from '@/components/layout/CommandPalette'
 import AnimatedBackground from '@/components/layout/AnimatedBackground'
+import HowToUse from '@/components/layout/HowToUse'
 
 const landingPaths = ['/']
 
@@ -27,6 +28,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
         </main>
       </div>
       <CommandPalette />
+      <HowToUse />
     </div>
   )
 }
