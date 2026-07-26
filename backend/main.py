@@ -159,7 +159,7 @@ def api_analyze(hash: str = Form(...)):
     elif char_set_size > 10: complexity = "Low"
     
     try:
-        is_base64 = bool(base64.b64decode(s, validate=True)) and len(s) > 10 and re.match(r'^[A-Za-z0-9+/=]+$', s)
+        is_base64 = bool(base64.b64decode(s, validate=True)) and len(s) > 10 and bool(re.match(r"^[A-Za-z0-9+/=]+$", s))
     except:
         is_base64 = False
     
