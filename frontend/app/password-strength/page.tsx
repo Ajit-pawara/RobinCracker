@@ -82,7 +82,7 @@ export default function PasswordStrength() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
           {/* Strength Meter */}
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-3 md:p-6">
               <div className="text-center mb-6">
                 <div className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-mono text-lg font-bold ${
                   result.strength === 'Very Strong' ? 'bg-cyber-green/10 text-cyber-green border border-cyber-green/30' :

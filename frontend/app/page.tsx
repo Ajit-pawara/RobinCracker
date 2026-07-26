@@ -34,7 +34,7 @@ export default function LandingPage() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-glow pointer-events-none" />
       
       {/* Nav bar */}
-      <nav className="relative z-10 flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+      <nav className="relative z-10 flex items-center justify-between px-4 md:px-6 py-3 md:py-4 max-w-7xl mx-auto">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyber-green to-cyber-cyan flex items-center justify-center">
             <span className="font-mono font-bold text-sm text-cyber-bg">RC</span>
@@ -50,18 +50,18 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+      <section className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 pt-12 md:pt-20 pb-12 md:pb-16 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <div className="glass-hero-text inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#070a0b]/80 border border-cyber-edge/50 text-cyan-300 font-mono text-xs mb-5 shadow-lg shadow-black/30">
             <Star className="w-3 h-3" /> Open Source · Cybersecurity Toolkit
           </div>
-          <div className="glass-hero-box px-8 py-7 rounded-xl bg-[#070a0b]/80 border border-cyber-edge/50 shadow-lg shadow-black/30 mb-6">
-            <h1 className="text-5xl md:text-7xl font-mono font-bold leading-tight text-glow-white">
+          <div className="glass-hero-box px-4 md:px-8 py-5 md:py-7 rounded-xl bg-[#070a0b]/80 border border-cyber-edge/50 shadow-lg shadow-black/30 mb-6">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-mono font-bold leading-tight text-glow-white">
               Robin<span className="text-cyber-green text-glow-green">Cracker</span>
             </h1>
           </div>
-          <div className="glass-hero-box px-8 py-5 rounded-xl bg-[#070a0b]/80 border border-cyber-edge/50 shadow-lg shadow-black/30 mb-8">
-            <p className="text-xl text-cyber-text/80 max-w-3xl mx-auto">
+          <div className="glass-hero-box px-4 md:px-8 py-4 md:py-5 rounded-xl bg-[#070a0b]/80 border border-cyber-edge/50 shadow-lg shadow-black/30 mb-8">
+            <p className="text-sm md:text-lg lg:text-xl text-cyber-text/80 max-w-3xl mx-auto">
               Professional Password Hash Analysis Toolkit — identify, analyze, and generate cracking commands with enterprise-grade UI.
             </p>
           </div>
@@ -97,14 +97,14 @@ export default function LandingPage() {
       </section>
 
       {/* Features */}
-      <section className="relative z-10 max-w-6xl mx-auto px-6 pb-20">
+      <section className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 pb-12 md:pb-20">
         <div className="text-center mb-12">
           <div className="inline-block glass-hero-box px-6 py-3 rounded-xl bg-[#070a0b]/80 border border-cyber-edge/50 shadow-lg shadow-black/30">
-            <h2 className="font-mono font-bold text-2xl mb-1 text-glow-cyan">16 Professional Modules</h2>
+            <h2 className="font-mono font-bold text-lg md:text-2xl mb-1 text-glow-cyan">16 Professional Modules</h2>
             <p className="text-cyber-text/70 mt-1">Everything you need for hash analysis and password security auditing</p>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {features.map((f, i) => (
             <motion.div
               key={f.title}
@@ -126,19 +126,19 @@ export default function LandingPage() {
       </section>
 
       {/* Stats */}
-      <section className="relative z-10 max-w-4xl mx-auto px-6 pb-20">
+      <section className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 pb-12 md:pb-20">
         <div className="glass rounded-2xl p-8 border border-cyber-cyan/20 shadow-lg shadow-blue-500/5">
           <div className="grid grid-cols-3 gap-8 text-center">
             <div>
-              <div className="font-mono text-3xl font-bold text-cyber-green">16</div>
+              <div className="font-mono text-2xl md:text-3xl font-bold text-cyber-green">16</div>
               <div className="font-mono text-xs text-cyber-text/60 mt-1">Modules</div>
             </div>
             <div>
-              <div className="font-mono text-3xl font-bold text-cyber-cyan">20+</div>
+              <div className="font-mono text-2xl md:text-3xl font-bold text-cyber-cyan">20+</div>
               <div className="font-mono text-xs text-cyber-text/60 mt-1">Hash Algorithms</div>
             </div>
             <div>
-              <div className="font-mono text-3xl font-bold text-cyber-amber">100%</div>
+              <div className="font-mono text-2xl md:text-3xl font-bold text-cyber-amber">100%</div>
               <div className="font-mono text-xs text-cyber-text/60 mt-1">Open Source</div>
             </div>
           </div>
