@@ -11,6 +11,15 @@
   .glass {
     @apply bg-cyber-panel/95 backdrop-blur-lg border border-cyber-edge/50;
   }
+  .glass-hero-box {
+    @apply bg-[#070a0b]/85 backdrop-blur-md border border-cyber-edge/40;
+  }
+  .glass-hero-text {
+    @apply bg-[#070a0b]/70 backdrop-blur-sm border border-cyber-edge/30;
+  }
+  .glass-hero-sub {
+    @apply bg-[#070a0b]/65 backdrop-blur-sm border border-cyber-edge/20;
+  }
   .glass-card {
     @apply glass rounded-xl p-6 transition-all duration-300 hover:border-cyber-cyan/30 hover:shadow-lg hover:shadow-cyber-cyan/5;
   }

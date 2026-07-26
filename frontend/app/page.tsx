@@ -52,15 +52,19 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/20 via-cyan-400/20 to-cyan-500/20 border border-cyan-400/40 text-cyan-200 font-mono text-xs mb-6 shadow-lg shadow-cyan-500/10">
+          <div className="glass-hero-text inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#070a0b]/80 border border-cyber-edge/50 text-cyan-300 font-mono text-xs mb-5 shadow-lg shadow-black/30">
             <Star className="w-3 h-3" /> Open Source · Cybersecurity Toolkit
           </div>
-          <h1 className="text-5xl md:text-7xl font-mono font-bold mb-6 leading-tight text-glow-white">
-            Robin<span className="text-cyber-green text-glow-green">Cracker</span>
-          </h1>
-          <p className="text-xl text-cyber-text/80 max-w-2xl mx-auto mb-8 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-            Professional Password Hash Analysis Toolkit — identify, analyze, and generate cracking commands with enterprise-grade UI.
-          </p>
+          <div className="glass-hero-box px-8 py-7 rounded-xl bg-[#070a0b]/80 border border-cyber-edge/50 shadow-lg shadow-black/30 mb-6">
+            <h1 className="text-5xl md:text-7xl font-mono font-bold leading-tight text-glow-white">
+              Robin<span className="text-cyber-green text-glow-green">Cracker</span>
+            </h1>
+          </div>
+          <div className="glass-hero-box px-8 py-5 rounded-xl bg-[#070a0b]/80 border border-cyber-edge/50 shadow-lg shadow-black/30 mb-8">
+            <p className="text-xl text-cyber-text/80 max-w-3xl mx-auto">
+              Professional Password Hash Analysis Toolkit — identify, analyze, and generate cracking commands with enterprise-grade UI.
+            </p>
+          </div>
 
           {/* Terminal */}
           <div className="max-w-xl mx-auto mb-10">
@@ -95,8 +99,10 @@ export default function LandingPage() {
       {/* Features */}
       <section className="relative z-10 max-w-6xl mx-auto px-6 pb-20">
         <div className="text-center mb-12">
-          <h2 className="font-mono font-bold text-2xl mb-2 text-glow-cyan">16 Professional Modules</h2>
-          <p className="text-cyber-text/70">Everything you need for hash analysis and password security auditing</p>
+          <div className="inline-block glass-hero-box px-6 py-3 rounded-xl bg-[#070a0b]/80 border border-cyber-edge/50 shadow-lg shadow-black/30">
+            <h2 className="font-mono font-bold text-2xl mb-1 text-glow-cyan">16 Professional Modules</h2>
+            <p className="text-cyber-text/70 mt-1">Everything you need for hash analysis and password security auditing</p>
+          </div>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((f, i) => (
