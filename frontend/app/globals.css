@@ -9,7 +9,7 @@
 
 @layer components {
   .glass {
-    @apply bg-cyber-panel/80 backdrop-blur-xl border border-cyber-edge/50;
+    @apply bg-cyber-panel/95 backdrop-blur-lg border border-cyber-edge/50;
   }
   .glass-card {
     @apply glass rounded-xl p-6 transition-all duration-300 hover:border-cyber-cyan/30 hover:shadow-lg hover:shadow-cyber-cyan/5;

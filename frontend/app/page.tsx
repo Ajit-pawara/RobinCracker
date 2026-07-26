@@ -28,8 +28,9 @@ export default function LandingPage() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       <MatrixRain />
-      {/* Blue glow overlay */}
-      <div className="absolute inset-0 z-[1] bg-blue-soft pointer-events-none" />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 z-[1] bg-black/40 pointer-events-none" />
+      <div className="absolute inset-0 z-[2] bg-blue-soft pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-glow pointer-events-none" />
       
       {/* Nav bar */}
@@ -51,13 +52,13 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/10 via-cyan-400/10 to-cyan-500/10 border border-cyan-400/30 text-cyan-300 font-mono text-xs mb-6 shadow-lg shadow-cyan-500/5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/20 via-cyan-400/20 to-cyan-500/20 border border-cyan-400/40 text-cyan-200 font-mono text-xs mb-6 shadow-lg shadow-cyan-500/10">
             <Star className="w-3 h-3" /> Open Source · Cybersecurity Toolkit
           </div>
           <h1 className="text-5xl md:text-7xl font-mono font-bold mb-6 leading-tight text-glow-white">
             Robin<span className="text-cyber-green text-glow-green">Cracker</span>
           </h1>
-          <p className="text-xl text-cyber-muted/90 max-w-2xl mx-auto mb-8 drop-shadow-[0_0_10px_rgba(59,130,246,0.05)]">
+          <p className="text-xl text-cyber-text/80 max-w-2xl mx-auto mb-8 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]">
             Professional Password Hash Analysis Toolkit — identify, analyze, and generate cracking commands with enterprise-grade UI.
           </p>
 
@@ -68,10 +69,10 @@ export default function LandingPage() {
                 <div className="terminal-dot bg-red-500" />
                 <div className="terminal-dot bg-yellow-500" />
                 <div className="terminal-dot bg-green-500" />
-                <span className="font-mono text-xs text-cyber-muted ml-2">robin@cracker:~$</span>
+                <span className="font-mono text-xs text-cyber-text/60 ml-2">robin@cracker:~$</span>
               </div>
               <div className="terminal-body min-h-[60px]">
-                <span className="text-cyber-muted">$ </span>
+                <span className="text-cyber-text/60">$ </span>
                 <span>{typed}</span>
                 <span className="animate-blink border-r-2 border-cyber-green ml-0.5" />
               </div>
@@ -95,7 +96,7 @@ export default function LandingPage() {
       <section className="relative z-10 max-w-6xl mx-auto px-6 pb-20">
         <div className="text-center mb-12">
           <h2 className="font-mono font-bold text-2xl mb-2 text-glow-cyan">16 Professional Modules</h2>
-          <p className="text-cyber-muted">Everything you need for hash analysis and password security auditing</p>
+          <p className="text-cyber-text/70">Everything you need for hash analysis and password security auditing</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((f, i) => (
@@ -110,9 +111,9 @@ export default function LandingPage() {
                 <div className="w-10 h-10 rounded-lg bg-cyber-bg/50 border border-cyber-edge flex items-center justify-center">
                   <f.icon className="w-5 h-5 text-cyber-text" />
                 </div>
-                <h3 className="font-mono font-bold text-sm">{f.title}</h3>
+                <h3 className="font-mono font-bold text-sm text-cyber-text/90">{f.title}</h3>
               </div>
-              <p className="text-sm text-cyber-muted">{f.desc}</p>
+              <p className="text-sm text-cyber-text/70">{f.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -124,15 +125,15 @@ export default function LandingPage() {
           <div className="grid grid-cols-3 gap-8 text-center">
             <div>
               <div className="font-mono text-3xl font-bold text-cyber-green">16</div>
-              <div className="font-mono text-xs text-cyber-muted mt-1">Modules</div>
+              <div className="font-mono text-xs text-cyber-text/60 mt-1">Modules</div>
             </div>
             <div>
               <div className="font-mono text-3xl font-bold text-cyber-cyan">20+</div>
-              <div className="font-mono text-xs text-cyber-muted mt-1">Hash Algorithms</div>
+              <div className="font-mono text-xs text-cyber-text/60 mt-1">Hash Algorithms</div>
             </div>
             <div>
               <div className="font-mono text-3xl font-bold text-cyber-amber">100%</div>
-              <div className="font-mono text-xs text-cyber-muted mt-1">Open Source</div>
+              <div className="font-mono text-xs text-cyber-text/60 mt-1">Open Source</div>
             </div>
           </div>
         </div>
@@ -140,7 +141,7 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-cyber-edge py-8 text-center">
-        <p className="font-mono text-xs text-cyber-muted">
+        <p className="font-mono text-xs text-cyber-text/50">
           RobinCracker 2026 · Built with Next.js · FastAPI · TypeScript
         </p>
       </footer>
