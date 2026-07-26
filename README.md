@@ -4,8 +4,20 @@
 
 **RobinCracker** is a professional open-source web application for password security analysis, hash identification, and cracking workflow automation. Built for penetration testers, security researchers, and CTF players.
 
-[![Live Demo](https://img.shields.io/badge/LIVE-Demo-00C853?style=for-the-badge&logo=vercel)](https://robin-cracker.vercel.app)
-[![API Docs](https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge&logo=render)](https://robincracker-api.onrender.com/docs)
+<div align="center">
+
+### 🌐 Live Demo
+
+[![Vercel](https://img.shields.io/badge/Frontend_Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://robin-cracker.vercel.app)
+[![Render](https://img.shields.io/badge/Backend_Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://robincracker-api.onrender.com/docs)
+[![GitHub](https://img.shields.io/badge/Source_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ajit-pawara/RobinCracker)
+
+**🔗 Frontend:** [robin-cracker.vercel.app](https://robin-cracker.vercel.app) · 
+**🔗 Backend API:** [robincracker-api.onrender.com](https://robincracker-api.onrender.com/docs)
+
+> ⏱️ *Free tier: Backend sleeps after inactivity — first load takes ~30s*
+
+</div>
 
 ---
 
