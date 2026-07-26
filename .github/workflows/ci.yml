@@ -1,0 +1,111 @@
+name: RobinCracker CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend-test:
+    name: Backend Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install fastapi uvicorn bcrypt python-multipart aiofiles httpx
+
+      - name: Check Python syntax
+        run: python -m py_compile main.py
+
+      - name: Test API endpoints
+        run: |
+          python -c "
+          import sys; sys.path.insert(0,'.')
+          from main import app
+          from fastapi.testclient import TestClient
+          client = TestClient(app)
+          
+          # Health
+          r = client.get('/api/health')
+          assert r.status_code == 200
+          print('Health: OK')
+          
+          # Identify
+          r = client.post('/api/identify', data={'hash': '5d41402abc4b2a76b9719d911017c592'})
+          assert r.status_code == 200
+          assert len(r.json()['results']) > 0
+          print('Identify: OK')
+          
+          # Password strength
+          r = client.post('/api/password-strength', data={'password': 'Test123!@#'})
+          assert r.status_code == 200
+          print('Password Strength: OK')
+          
+          # Generate
+          r = client.post('/api/generate-password', data={'length': '16', 'charset_type': 'all', 'count': '3'})
+          assert r.status_code == 200
+          print('Generate Password: OK')
+          
+          # Benchmark
+          r = client.get('/api/benchmark')
+          assert r.status_code == 200
+          print('Benchmark: OK')
+          
+          # Hashcat command
+          r = client.post('/api/hashcat-command', data={'hash_type': 'MD5', 'attack_mode': 'Dictionary'})
+          assert r.status_code == 200
+          print('Hashcat Builder: OK')
+          
+          print('\nAll backend tests passed!')
+          "
+
+  frontend-build:
+    name: Frontend Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+  docker-build:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    needs: [backend-test, frontend-build]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker images
+        run: docker compose build
