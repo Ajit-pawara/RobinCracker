@@ -3,14 +3,15 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { 
-  Zap, Hash, Scan, Shield, BarChart3, BookOpen, Terminal, 
+  Home, Zap, Hash, Scan, Shield, BarChart3, BookOpen, Terminal, 
   History, Settings, Download, Key, ArrowLeftRight, FileText, 
   Sliders, HelpCircle, Library, ChevronLeft, ChevronRight,
-  Cpu
+  Cpu, Code2, MessageSquare
 } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const navItems = [
+  { href: '/', label: 'Home', icon: Home },
   { href: '/dashboard', label: 'Dashboard', icon: Zap },
   { href: '/hash-identifier', label: 'Hash Identifier', icon: Hash },
   { href: '/hash-analyzer', label: 'Hash Analyzer', icon: Scan },
@@ -26,6 +27,8 @@ const navItems = [
   { href: '/terminal', label: 'Terminal Sim', icon: Terminal },
   { href: '/history', label: 'History', icon: History },
   { href: '/export', label: 'Export', icon: Download },
+  { href: '/developer', label: 'Developer', icon: Code2 },
+  { href: '/feedback', label: 'Feedback', icon: MessageSquare },
   { href: '/settings', label: 'Settings', icon: Settings },
 ]
 
@@ -51,7 +54,7 @@ export default function Sidebar() {
       {/* Nav */}
       <nav className="flex-1 overflow-y-auto p-2 space-y-0.5 scrollbar-thin">
         {navItems.map((item) => {
-          const isActive = pathname === item.href || (item.href === '/dashboard' && pathname === '/')
+          const isActive = pathname === item.href || (item.href === '/dashboard' && pathname === '/dashboard')
           return (
             <Link
               key={item.href}
