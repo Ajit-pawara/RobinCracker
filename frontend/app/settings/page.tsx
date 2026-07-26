@@ -154,6 +154,11 @@ export default function Settings() {
                     className="inline-flex items-center gap-1 text-xs text-cyber-cyan hover:text-cyber-green transition-colors">
                     <GitBranch className="w-3.5 h-3.5" /> @Ajit-pawara
                   </a>
+                  <span className="text-cyber-muted text-xs">·</span>
+                  <a href="https://github.com/Ajit-pawara/Portfolio" target="_blank" rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-1 text-xs text-cyber-cyan hover:text-cyber-green transition-colors">
+                    <ExternalLink className="w-3.5 h-3.5" /> Portfolio
+                  </a>
                 </div>
               </div>
             </div>
